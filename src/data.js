@@ -1,6 +1,6 @@
 export default [
   {
-    id: 2193158.3145151,
+    id: Math.random() * 100000000,
     title: "Mount Fuji",
     location: "JAPAN",
     googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",
@@ -11,7 +11,7 @@ export default [
     imageUrl: "https://source.unsplash.com/WLxQvbMyfas",
   },
   {
-    id: 1209315851.21311251,
+    id: Math.random() * 100000000,
     title: "Sydney Opera House",
     location: "AUSTRALIA",
     googleMapsUrl:
@@ -23,7 +23,7 @@ export default [
     imageUrl: "https://source.unsplash.com/JmuyB_LibRo",
   },
   {
-    id: 1203954123.1551151212,
+    id: Math.random() * 100000000,
     title: "Geirangerfjord",
     location: "NORWAY",
     googleMapsUrl:

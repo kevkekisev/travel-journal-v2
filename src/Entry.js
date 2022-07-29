@@ -3,6 +3,7 @@ import Card from "./Card";
 import data from "./data";
 
 function Entry(props) {
+  const [dataValue, setDataValue] = useState(data);
   const [entry, setEntry] = useState([
     {
       title: "",
@@ -12,7 +13,6 @@ function Entry(props) {
       endDate: "",
       description: "",
       imageUrl: "",
-      id: Math.random() * 100000000,
     },
   ]);
   function handleChange(e) {
@@ -35,8 +35,23 @@ function Entry(props) {
         id: Math.random() * 10000000,
       };
     });
-    data.unshift(entry);
+    setDataValue((prevState) => {
+      return [entry, ...prevState];
+    });
   }
+
+  function removeEntry(id) {
+    const removeArr = [
+      ...dataValue.filter(function (entry) {
+        return entry.id !== id;
+      }),
+    ];
+    setDataValue(removeArr);
+  }
+
+  const newDataEntry = dataValue.map(function (item) {
+    return <Card item={item} handledelete={removeEntry} />;
+  });
 
   return (
     <div>
@@ -103,7 +118,7 @@ function Entry(props) {
           </button>
         </div>
       </form>
-      <Card data={data} />
+      {newDataEntry}
     </div>
   );
 }
